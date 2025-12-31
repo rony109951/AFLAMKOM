@@ -1,0 +1,102 @@
+*{box-sizing:border-box;font-family:Tahoma}
+body,html{margin:0;padding:0;background:black;color:white}
+
+#bgVideo{
+position:fixed;
+min-width:100%;
+min-height:100%;
+z-index:-1;
+filter:brightness(0.25)
+}
+
+.neon{
+color:white;
+text-shadow:0 0 5px red,0 0 15px red
+}
+
+#termsBox{
+position:fixed;inset:0;
+background:rgba(0,0,0,.95);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:10
+}
+
+#termsBox button{
+margin:10px;
+padding:10px 30px;
+border:none;
+background:red;
+color:white;
+cursor:pointer
+}
+
+#declineScreen{
+display:none;
+position:fixed;inset:0;
+background:black;
+color:white;
+text-align:center;
+padding-top:40vh;
+z-index:11
+}
+
+#content{display:none;padding:20px}
+
+header{text-align:center;margin-bottom:20px}
+
+#search{
+padding:8px;
+width:80%;
+max-width:300px
+}
+
+#gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px
+}
+
+.card{
+background:rgba(0,0,0,.7);
+border:1px solid red;
+box-shadow:0 0 10px red;
+padding:10px
+}
+
+.card img{
+width:100%;
+border-radius:8px
+}
+
+.card h3{
+text-align:center;
+animation:glow 2s infinite alternate
+}
+
+@keyframes glow{
+from{text-shadow:0 0 5px white}
+to{text-shadow:0 0 15px red}
+}
+
+.download{
+width:100%;
+padding:8px;
+background:red;
+border:none;
+color:white;
+cursor:pointer
+}
+
+.comment textarea{
+width:100%;
+margin-top:5px
+}
+
+footer{
+margin-top:40px;
+text-align:center;
+color:#aaa
+}

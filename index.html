@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>أفلامكم | AFLAMKOM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- فيديو الخلفية -->
+<video autoplay muted loop id="bgVideo">
+  <source src="flm.mp4" type="video/mp4">
+</video>
+
+<!-- نافذة الشروط -->
+<div id="termsBox">
+  <h2>⚠️ تنبيه</h2>
+  <p>الموقع لغرض الترفيه فقط، هل توافق على شروط الخدمة؟</p>
+  <button onclick="acceptTerms()">أوافق</button>
+  <button onclick="declineTerms()">لا أوافق</button>
+</div>
+
+<!-- شاشة الرفض -->
+<div id="declineScreen">
+  <h1>لتشغيل الموقع</h1>
+  <p>اسحب الشاشة لأسفل ووافق على شروط الخدمة</p>
+</div>
+
+<!-- المحتوى -->
+<div id="content">
+
+<header>
+  <h1 class="neon">أفلامكم | AFLAMKOM</h1>
+  <p class="note">يتم إضافة محتوى جديد كل يوم – تحديث مستمر وبيتم اضافه افلام ومسلسلات جديده</p>
+  <input type="text" id="search" placeholder="🔍 ابحث هنا">
+</header>
+
+<div id="gallery"></div>
+
+<footer>
+  جميع الحقوق محفوظة © روني البحيره 2025 – 2026
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
