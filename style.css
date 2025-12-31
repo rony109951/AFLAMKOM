@@ -1,138 +1,168 @@
 
-*{box-sizing:border-box;font-family:Tahoma}
-body,html{margin:0;padding:0;background:black;color:white}
+*{
+  box-sizing:border-box;
+  font-family:Tahoma;
+}
+
+/* 🔴 مهم: خلي الخلفية شفافة */
+body,html{
+  margin:0;
+  padding:0;
+  background:transparent;
+  color:white;
+}
 
 /* فيديو الخلفية */
 #bgVideo{
-position:fixed;
-min-width:100%;
-min-height:100%;
-z-index:-1;
-filter:brightness(0.25)
+  position:fixed;
+  top:0;
+  left:0;
+  min-width:100%;
+  min-height:100%;
+  z-index:-1;
+  object-fit:cover;
+  filter:brightness(0.3);
 }
 
-/* نيون */
+/* نيون العنوان */
 .neon{
-color:white;
-text-shadow:0 0 5px red,0 0 15px red
+  color:white;
+  text-shadow:0 0 5px red,0 0 15px red;
 }
 
 /* نافذة الشروط */
 #termsBox{
-position:fixed;inset:0;
-background:rgba(0,0,0,.95);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:10
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
 }
 
 #termsBox button{
-margin:10px;
-padding:10px 30px;
-border:none;
-background:red;
-color:white;
-cursor:pointer
+  margin:10px;
+  padding:10px 30px;
+  border:none;
+  background:red;
+  color:white;
+  cursor:pointer;
 }
 
 /* شاشة الرفض */
 #declineScreen{
-display:none;
-position:fixed;inset:0;
-background:black;
-color:white;
-text-align:center;
-padding-top:40vh;
-z-index:11
+  display:none;
+  position:fixed;
+  inset:0;
+  background:black;
+  color:white;
+  text-align:center;
+  padding-top:40vh;
+  z-index:11;
 }
 
 /* المحتوى */
-#content{display:none;padding:20px}
-
-header{text-align:center;margin-bottom:20px}
-
-#search{
-padding:8px;
-width:80%;
-max-width:300px
+#content{
+  display:none;
+  padding:20px;
+  background:transparent;
 }
 
-/* 🔴 هنا التعديل الأساسي 🔴 */
-/* عرض عمودي */
+/* الهيدر */
+header{
+  text-align:center;
+  margin-bottom:20px;
+  background:rgba(0,0,0,0.25);
+  backdrop-filter:blur(4px);
+  padding:15px;
+  border:1px solid rgba(255,0,0,0.4);
+}
+
+/* البحث */
+#search{
+  padding:8px;
+  width:80%;
+  max-width:300px;
+}
+
+/* المعرض – عرض عمودي */
 #gallery{
-display:block;
+  display:block;
+  background:transparent;
 }
 
 /* كارت الفيلم */
 .card{
-margin-bottom:35px;
-padding:15px;
-background:rgba(0,0,0,0.35); /* شفاف */
-border:1px solid rgba(255,0,0,0.6);
-box-shadow:0 0 15px red;
-backdrop-filter:blur(4px);
+  margin-bottom:35px;
+  padding:15px;
+  background:rgba(0,0,0,0.18); /* 👈 شفاف */
+  border:1px solid rgba(255,0,0,0.5);
+  box-shadow:0 0 15px red;
+  backdrop-filter:blur(3px);
 }
 
-/* الصورة غير شفافة */
+/* الصورة (غير شفافة) */
 .card img{
-width:100%;
-max-width:360px;     /* قريب من حجم الواتس */
-display:block;
-margin:auto;
-border-radius:10px;
-background:black;
+  width:100%;
+  max-width:360px;
+  display:block;
+  margin:auto;
+  border-radius:10px;
+  background:black;
 }
 
-/* الاسم */
+/* اسم الفيلم */
 .card h3{
-text-align:center;
-margin:10px 0 5px;
-animation:glow 2s infinite alternate
+  text-align:center;
+  margin:10px 0 5px;
+  animation:glow 2s infinite alternate;
 }
 
 /* الوصف */
 .desc{
-text-align:center;
-font-size:14px;
-margin-bottom:10px;
-color:#eee;
-text-shadow:0 0 5px red;
+  text-align:center;
+  font-size:14px;
+  margin-bottom:10px;
+  color:#eee;
+  text-shadow:0 0 5px red;
 }
 
 /* زر التحميل */
 .download{
-width:100%;
-padding:8px;
-background:rgba(255,0,0,0.8);
-border:none;
-color:white;
-cursor:pointer
+  width:100%;
+  padding:10px;
+  background:rgba(255,0,0,0.75);
+  border:none;
+  color:white;
+  cursor:pointer;
 }
 
 /* التعليقات */
 .comment{
-margin-top:10px;
+  margin-top:10px;
 }
 
 .comment textarea{
-width:100%;
-margin-top:5px;
-background:rgba(0,0,0,0.4);
-color:white;
-border:1px solid red;
+  width:100%;
+  margin-top:5px;
+  background:rgba(0,0,0,0.35);
+  color:white;
+  border:1px solid red;
 }
 
 /* الفوتر */
 footer{
-margin-top:40px;
-text-align:center;
-color:#aaa
+  margin-top:40px;
+  text-align:center;
+  color:#aaa;
+  background:rgba(0,0,0,0.25);
+  padding:10px;
 }
 
 /* تأثير اللمعان */
 @keyframes glow{
-from{text-shadow:0 0 5px white}
-to{text-shadow:0 0 15px red}
+  from{ text-shadow:0 0 5px white; }
+  to{ text-shadow:0 0 15px red; }
 }
