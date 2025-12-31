@@ -1,6 +1,8 @@
+
 *{box-sizing:border-box;font-family:Tahoma}
 body,html{margin:0;padding:0;background:black;color:white}
 
+/* فيديو الخلفية */
 #bgVideo{
 position:fixed;
 min-width:100%;
@@ -9,11 +11,13 @@ z-index:-1;
 filter:brightness(0.25)
 }
 
+/* نيون */
 .neon{
 color:white;
 text-shadow:0 0 5px red,0 0 15px red
 }
 
+/* نافذة الشروط */
 #termsBox{
 position:fixed;inset:0;
 background:rgba(0,0,0,.95);
@@ -33,6 +37,7 @@ color:white;
 cursor:pointer
 }
 
+/* شاشة الرفض */
 #declineScreen{
 display:none;
 position:fixed;inset:0;
@@ -43,6 +48,7 @@ padding-top:40vh;
 z-index:11
 }
 
+/* المحتوى */
 #content{display:none;padding:20px}
 
 header{text-align:center;margin-bottom:20px}
@@ -53,50 +59,80 @@ width:80%;
 max-width:300px
 }
 
+/* 🔴 هنا التعديل الأساسي 🔴 */
+/* عرض عمودي */
 #gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:15px
+display:block;
 }
 
+/* كارت الفيلم */
 .card{
-background:rgba(0,0,0,.7);
-border:1px solid red;
-box-shadow:0 0 10px red;
-padding:10px
+margin-bottom:35px;
+padding:15px;
+background:rgba(0,0,0,0.35); /* شفاف */
+border:1px solid rgba(255,0,0,0.6);
+box-shadow:0 0 15px red;
+backdrop-filter:blur(4px);
 }
 
+/* الصورة غير شفافة */
 .card img{
 width:100%;
-border-radius:8px
+max-width:360px;     /* قريب من حجم الواتس */
+display:block;
+margin:auto;
+border-radius:10px;
+background:black;
 }
 
+/* الاسم */
 .card h3{
 text-align:center;
+margin:10px 0 5px;
 animation:glow 2s infinite alternate
 }
 
-@keyframes glow{
-from{text-shadow:0 0 5px white}
-to{text-shadow:0 0 15px red}
+/* الوصف */
+.desc{
+text-align:center;
+font-size:14px;
+margin-bottom:10px;
+color:#eee;
+text-shadow:0 0 5px red;
 }
 
+/* زر التحميل */
 .download{
 width:100%;
 padding:8px;
-background:red;
+background:rgba(255,0,0,0.8);
 border:none;
 color:white;
 cursor:pointer
 }
 
-.comment textarea{
-width:100%;
-margin-top:5px
+/* التعليقات */
+.comment{
+margin-top:10px;
 }
 
+.comment textarea{
+width:100%;
+margin-top:5px;
+background:rgba(0,0,0,0.4);
+color:white;
+border:1px solid red;
+}
+
+/* الفوتر */
 footer{
 margin-top:40px;
 text-align:center;
 color:#aaa
+}
+
+/* تأثير اللمعان */
+@keyframes glow{
+from{text-shadow:0 0 5px white}
+to{text-shadow:0 0 15px red}
 }
